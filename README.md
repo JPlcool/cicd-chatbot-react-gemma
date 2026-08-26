@@ -27,6 +27,16 @@ npm run dev
 
 Get an API key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey).
 
+## Tests
+
+Run the project's automated validation checks:
+
+```bash
+npm test
+```
+
+This runs the linter and a production TypeScript/Vite build.
+
 ## ⚙️ Environment variables
 
 | Variable | Purpose | Default |
