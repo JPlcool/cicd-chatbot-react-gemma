@@ -82,7 +82,7 @@ jobs:
       - name: Build for GitHub Pages
         env:
           VITE_GOOGLE_AI_API_KEY: ${{ secrets.VITE_GOOGLE_AI_API_KEY }}
-          VITE_GEMMA_MODEL: ${{ vars.VITE_GEMMA_MODEL }}
+          VITE_GEMMA_MODEL: ${{ vars.VITE_GEMMA_MODEL || 'gemma-4-31b-it' }}
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
         run: npm run build
 
