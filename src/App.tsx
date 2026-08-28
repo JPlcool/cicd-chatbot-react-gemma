@@ -12,6 +12,12 @@ const SUGGESTIONS = [
   'How should I store deploy secrets safely?',
 ];
 
+const BRAND = {
+  organizationName: 'HERE AND NOW AI',
+  website: 'https://hereandnowai.com',
+  logo: 'https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/logo-of-here-and-now-ai.png',
+};
+
 function newId() {
   return Math.random().toString(36).slice(2);
 }
@@ -45,9 +51,14 @@ export default function App() {
   return (
     <div className="app">
       <header className="header">
-        <div>
-          <h1 className="header__title">CIDBot</h1>
-          <p className="header__subtitle">A CI/CD assistant powered by {activeModel}</p>
+        <div className="header__identity">
+          <a className="header__brand" href={BRAND.website} target="_blank" rel="noreferrer" aria-label={BRAND.organizationName}>
+            <img className="header__logo" src={BRAND.logo} alt="HERE AND NOW AI" />
+          </a>
+          <div>
+            <h1 className="header__title">CIDBot</h1>
+            <p className="header__subtitle">CI/CD assistant powered by {activeModel}</p>
+          </div>
         </div>
         {messages.length > 0 && (
           <button className="header__reset" onClick={() => { setMessages([]); setError(null); }}>
